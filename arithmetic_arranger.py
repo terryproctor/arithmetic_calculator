@@ -62,6 +62,7 @@ def arithmetic_arranger(problems, solve = False):
             bottom_problem = split_problem[1] + " "*c + split_problem[2]
             c = len(bottom_problem)
 
+        #patch
         if b >= (a+1):
             bottom_problem = split_problem[1] + "  " + split_problem[2]
             c = len(bottom_problem)
@@ -119,4 +120,4 @@ def arithmetic_arranger(problems, solve = False):
 
 print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], True))
 
-# 123 + 49 the sign needs to be one more out, ie c needs to be one more
+# 123 + 49 the sign needs to be one more out, ie c needs to be one more # patched
