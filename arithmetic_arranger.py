@@ -58,9 +58,15 @@ def arithmetic_arranger(problems, solve = False):
             c = d
 
         # making sure that bottom line always has sign sticking out
-        if b < a or b < d:
+        if b < a and b < d:
             bottom_problem = split_problem[1] + " "*c + split_problem[2]
             c = len(bottom_problem)
+
+        if b >= (a+1):
+            bottom_problem = split_problem[1] + "  " + split_problem[2]
+            c = len(bottom_problem)
+
+
 
         # format top and bottom string so that they are the length of the 
         # longest half
