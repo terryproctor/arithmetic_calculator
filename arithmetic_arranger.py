@@ -11,7 +11,7 @@ def arithmetic_arranger(problems, solve = False):
     answer_list = list()
     
     # no more than 4 problems to solve
-    if len(problems) > 4:
+    if len(problems) > 5:
         return "Error: Too many problems."
     
     for problem in problems:
@@ -63,11 +63,11 @@ def arithmetic_arranger(problems, solve = False):
             c = len(bottom_problem)
 
         #patch
-        if b >= (a+1):
+        if b <= (a+1):
             bottom_problem = split_problem[1] + "  " + split_problem[2]
             c = len(bottom_problem)
 
-
+        print(c)
 
         # format top and bottom string so that they are the length of the 
         # longest half
@@ -82,8 +82,6 @@ def arithmetic_arranger(problems, solve = False):
         top_list.append(format_top_problem)
         bottom_list.append(format_bottom_problem)
         dash_list.append(dash)
-
-        print(c)
     
     # creating each line #!create a loop in future
     top_line = ''
@@ -118,6 +116,8 @@ def arithmetic_arranger(problems, solve = False):
     
     return output
 
-print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], True))
+print(arithmetic_arranger(["123 + 49", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"], False))
 
 # 123 + 49 the sign needs to be one more out, ie c needs to be one more # patched
+
+# created new bug now sometimes too many spaces on line b # fixed
