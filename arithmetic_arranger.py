@@ -1,4 +1,4 @@
-def arithmetic_arranger(problems, solve):
+def arithmetic_arranger(problems, solve = False):
     # lists created so that they can be printed as one line
     # each problem will have the same width
     # each problem will need to have 4 spaces printed between each
@@ -34,8 +34,9 @@ def arithmetic_arranger(problems, solve):
                 return "Error: Numbers cannot be more than four digits."
 
         # solving the answer if required
-        answer = ""
+        
         if solve == True:
+            answer = ""
             if split_problem[1] == "+":
                 answer = int(split_problem[0]) + int(split_problem[2])
             elif split_problem[1] == "-":
@@ -44,11 +45,14 @@ def arithmetic_arranger(problems, solve):
         # Find which length is longer top or bottom or answer
         a = len(top_problem)
         b = len(bottom_problem)
-        d = len(str(answer))
+        if solve == True:
+            d = len(str(answer))
+        else:
+            d = 0
 
         if a > b and a > d:
             c = a
-        if b >= a and b >= d:
+        elif b >= a and b >= d:
             c = b
         else:
             c = d
@@ -71,6 +75,8 @@ def arithmetic_arranger(problems, solve):
         top_list.append(format_top_problem)
         bottom_list.append(format_bottom_problem)
         dash_list.append(dash)
+
+        print(c)
     
     # creating each line #!create a loop in future
     top_line = ''
@@ -105,5 +111,6 @@ def arithmetic_arranger(problems, solve):
     
     return output
 
-#print(arithmetic_arranger(['1 + 445', '2222 - 7', '3 + 88', '9999 + 9999'], True))
+print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], True))
 
+# 123 + 49 the sign needs to be one more out, ie c needs to be one more
