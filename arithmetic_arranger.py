@@ -116,8 +116,9 @@ def arithmetic_arranger(problems, solve = False):
     
     return output
 
-print(arithmetic_arranger(["123 + 49", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"], False))
+print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49", "1 - 9380"], False))
 
 # 123 + 49 the sign needs to be one more out, ie c needs to be one more # patched
 
 # created new bug now sometimes too many spaces on line b # fixed
+#new bug 3801 - 2. b needs to 1 more
